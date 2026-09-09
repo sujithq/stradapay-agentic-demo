@@ -36,3 +36,14 @@ The [product requirement](docs/product-requirement.md) captures the business rat
 ## Pull-request controls
 
 Pull requests run the TypeScript build and tests through GitHub Actions. Repository administrators must protect `main` in GitHub settings by requiring the `validate` status check and at least one approving review.
+
+## Custom agent workflow
+
+Repository-local agents in `.github/agents` support the executive-session workflow:
+
+1. **Product Owner** refines the business request and acceptance criteria.
+2. **Developer** implements the approved requirement, tests, and documentation.
+3. **Reviewer** performs a read-only review and reports whether changes are required.
+4. A **human** reviews the evidence and is the only role that approves the pull request.
+
+Select these agents from the GitHub Copilot agent picker in VS Code. The Product Owner and Developer agents provide handoff buttons for the next agent while keeping the human approval boundary explicit.
