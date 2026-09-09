@@ -8,7 +8,10 @@ This repository is a synthetic project prepared for the Strada executive GitHub 
 npm install
 npm run build
 npm test
+npm run demo
 ```
+
+The demo processes a small synthetic payroll batch and prints accepted and held outcomes using operator-safe messages. No external services or real payroll data are used.
 
 ## Development environment
 
@@ -26,6 +29,8 @@ Add or update payroll exception handling for a fictional country's net payment t
 3. tests and docs update
 
 The baseline fictional country is Novara (`NVR`), with an inclusive net payment range of 1,500-12,000. See [the operator guide](docs/operator-guide.md) for exception handling.
+
+The [product requirement](docs/product-requirement.md) captures the business rationale, product-owner request, acceptance criteria, human-review gate, and executive-visible outcome.
 
 ## Pull-request controls
 

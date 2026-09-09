@@ -5,6 +5,8 @@
   "description": "Synthetic StradaPay repo for Copilot agentic engineering demo",
   "scripts": {
     "build": "tsc --noEmit",
+    "demo": "npm run demo:build && node dist/src/demo.js",
+    "demo:build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest"
   },

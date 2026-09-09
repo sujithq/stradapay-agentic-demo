@@ -6,7 +6,9 @@ This synthetic repository models a small payroll validation component used for t
 
 - `src/rules/netPayRangeRule.ts`: country policy registry and inclusive net payment validation
 - `src/services/exceptionFormatter.ts`: operator-safe explanations with masked identifiers
+- `src/demo.ts`: runnable synthetic batch outcome for the executive demonstration
 - `tests/netPayRangeRule.test.ts`: baseline tests that should remain green during live edits
+- `tests/demo.test.ts`: visible-outcome and disclosure-safety tests
 - `docs/operator-guide.md`: rule catalogue and operator response guidance
 
 ## Validation flow
