@@ -1,16 +1,12 @@
 import { PayrollRecord, ValidationResult } from "../types.js";
+import { loadCountryPolicies } from "../services/countryPolicyLoader.js";
 
 export type CountryPolicy = {
-  minNetPay: number;
-  maxNetPay: number;
+  readonly minNetPay: number;
+  readonly maxNetPay: number;
 };
 
-export const countryPolicies: Readonly<Record<string, CountryPolicy>> = {
-  NVR: {
-    minNetPay: 1500,
-    maxNetPay: 12000
-  }
-};
+export const countryPolicies = loadCountryPolicies();
 
 export function validateNetPayRange(record: Partial<PayrollRecord>): ValidationResult {
   if (

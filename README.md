@@ -17,7 +17,8 @@ The demo processes a small synthetic payroll batch and prints accepted and held 
 
 - Use Node.js 22, as pinned in `.nvmrc`.
 - The project-level `.npmrc` uses the Microsoft package feed proxy and saves exact dependency versions.
-- Local `.env` files are ignored. Add a tracked `.env.example` if runtime configuration is introduced.
+- Country policies load from `config/country-policies.json`. Set `STRADAPAY_POLICY_FILE` to use another validated JSON file at startup.
+- Local `.env` files are ignored; `.env.example` documents supported variables. Node does not load `.env` automatically.
 - EditorConfig and Git attributes keep indentation and line endings consistent across operating systems.
 
 ## Suggested live task

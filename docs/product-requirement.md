@@ -21,6 +21,8 @@ As a StradaPay payroll operator, I need Novara payroll records outside the appro
 7. Automated tests cover accepted, rejected, boundary, malformed, unsupported-country, and privacy cases.
 8. The operator guide describes the rule and review action.
 9. The pull request passes the `validate` status check and receives at least one human approval.
+10. Country ranges are loaded from validated JSON configuration at startup.
+11. Missing, empty, malformed, or reversed-range configuration prevents processing.
 
 ## Executive-visible outcome
 

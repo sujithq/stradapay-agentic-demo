@@ -1,0 +1,6 @@
+{
+  "NVR": {
+    "minNetPay": 1500,
+    "maxNetPay": 12000,
+  }
+}

@@ -4,7 +4,9 @@ This synthetic repository models a small payroll validation component used for t
 
 ## Components
 
-- `src/rules/netPayRangeRule.ts`: country policy registry and inclusive net payment validation
+- `config/country-policies.json`: synthetic country policy configuration loaded at startup
+- `src/services/countryPolicyLoader.ts`: configuration loading and fail-fast schema validation
+- `src/rules/netPayRangeRule.ts`: inclusive net payment validation using configured policies
 - `src/services/exceptionFormatter.ts`: operator-safe explanations with masked identifiers
 - `src/demo.ts`: runnable synthetic batch outcome for the executive demonstration
 - `tests/netPayRangeRule.test.ts`: baseline tests that should remain green during live edits
@@ -13,11 +15,12 @@ This synthetic repository models a small payroll validation component used for t
 
 ## Validation flow
 
-1. Reject records missing the employee reference, country code, or numeric net payment.
-2. Resolve the country policy from the record's country code.
-3. Reject unsupported countries without exposing employee-sensitive fields.
-4. Validate net payment against the country's inclusive range.
-5. Format a safe message for the operator.
+1. Load the configured policy file and reject invalid configuration at startup.
+2. Reject records missing the employee reference, country code, or numeric net payment.
+3. Resolve the country policy from the record's country code.
+4. Reject unsupported countries without exposing employee-sensitive fields.
+5. Validate net payment against the country's inclusive range.
+6. Format a safe message for the operator.
 
 ## Demo guardrails
 

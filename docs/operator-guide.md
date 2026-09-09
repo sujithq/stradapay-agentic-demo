@@ -10,6 +10,8 @@ This guide describes the synthetic rules used by the StradaPay demonstration. Do
 
 Novara is fictional and exists only for this demonstration.
 
+Policies are loaded from `config/country-policies.json` when the process starts. A developer may set `STRADAPAY_POLICY_FILE` to the path of another synthetic JSON policy file. Each key must be a three-letter uppercase country code, each bound must be a finite number, and `minNetPay` must not exceed `maxNetPay`. Invalid or missing configuration prevents startup so records are never evaluated against an uncertain policy.
+
 ## Operator actions
 
 | Reason code | Meaning | Operator action |
