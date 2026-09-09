@@ -5,10 +5,14 @@ export type CountryPolicy = {
   maxNetPay: number;
 };
 
-export function validateNetPayRange(
-  record: Partial<PayrollRecord>,
-  policy: CountryPolicy
-): ValidationResult {
+export const countryPolicies: Readonly<Record<string, CountryPolicy>> = {
+  NVR: {
+    minNetPay: 1500,
+    maxNetPay: 12000
+  }
+};
+
+export function validateNetPayRange(record: Partial<PayrollRecord>): ValidationResult {
   if (
     !record.employeeRef ||
     !record.countryCode ||
@@ -19,6 +23,15 @@ export function validateNetPayRange(
       isValid: false,
       reasonCode: "MISSING_FIELD",
       message: "Payroll record is missing required fields for validation."
+    };
+  }
+
+  const policy = countryPolicies[record.countryCode];
+  if (!policy) {
+    return {
+      isValid: false,
+      reasonCode: "UNSUPPORTED_COUNTRY",
+      message: "Payroll record uses an unsupported country policy."
     };
   }
 

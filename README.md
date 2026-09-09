@@ -19,8 +19,14 @@ npm test
 
 ## Suggested live task
 
-Add or update payroll exception handling for country-specific net payment thresholds and verify:
+Add or update payroll exception handling for a fictional country's net payment thresholds and verify:
 
 1. validation logic changes
 2. operator message safety
 3. tests and docs update
+
+The baseline fictional country is Novara (`NVR`), with an inclusive net payment range of 1,500-12,000. See [the operator guide](docs/operator-guide.md) for exception handling.
+
+## Pull-request controls
+
+Pull requests run the TypeScript build and tests through GitHub Actions. Repository administrators must protect `main` in GitHub settings by requiring the `validate` status check and at least one approving review.

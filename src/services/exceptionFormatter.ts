@@ -20,5 +20,9 @@ export function buildOperatorMessage(
     return "Validation failed because required payroll fields are missing.";
   }
 
+  if (result.reasonCode === "UNSUPPORTED_COUNTRY") {
+    return "Validation failed because the payroll country is not supported.";
+  }
+
   return `Record ${maskEmployeeRef(record.employeeRef)} needs review: ${result.message}`;
 }

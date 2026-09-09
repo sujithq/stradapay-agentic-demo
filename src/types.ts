@@ -8,6 +8,6 @@ export type PayrollRecord = {
 
 export type ValidationResult = {
   isValid: boolean;
-  reasonCode?: "MISSING_FIELD" | "INVALID_RANGE";
+  reasonCode?: "MISSING_FIELD" | "UNSUPPORTED_COUNTRY" | "INVALID_RANGE";
   message: string;
 };
